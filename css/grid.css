@@ -1,0 +1,84 @@
+
+/* --------------- BOX SIZING */
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+/* --------------- ROW CLEARFIX */
+.row {
+  width: 100%;
+  /* Despues eliminar */
+  background-color: blue;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+ 
+.clearfix:after {
+  clear: both;
+}
+ 
+.clearfix {
+  *zoom: 1;
+}
+
+/* --------------- COLUMN */
+.column {
+  width: 100%;
+  float: left;
+
+  /* Despues eliminar */
+  height: 60px;
+}
+
+.column.flow-oposite {
+  float: right;
+}
+
+.column.third {
+  display: none;
+}
+
+/* --------------- CONTEINER */
+.container-central {
+  width: 420px;
+  margin: auto;
+  margin-top: 60px;
+  padding: 5px;
+
+  /* Despues eliminar */
+  height: 200px;
+  background-color: red;
+}
+
+/* --------------- SMALL WIDTH */
+@media (min-width: 710px) {
+  .container-central {
+    width: 700px;
+  }
+  .column.half {
+    width: 50%;
+  }
+  .column.third {
+    width: 33.4%;
+    display: block;
+  }
+  .column.two-thirds {
+    width: 66.6%;
+  }
+
+}
+
+/* --------------- BACKGROUND */
+.loggin {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  /* Despues eliminar */
+}
