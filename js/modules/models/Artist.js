@@ -1,11 +1,9 @@
-define( function () {
+define(['libs/backbone'], function () {
   var Artist = Backbone.Model.extend({
     defaults: {
-      'nameArtist': '',
+      'name': '',
       'mbid': '',
-      'url': '',
-      'image_small': '',
-      'image': '',
+      'url': ''
     }
 
   });

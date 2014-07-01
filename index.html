@@ -14,17 +14,24 @@
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all">
   </head>
   <body>
-
     <!-- central container with user information -->
     <div class="container">
       <div class='row clearfix'>
+        <div class='column'>
+          <input type='text' class='searcher'></input>
+        </div>
+      </div>
+      <div class='row clearfix'>
         <div class='column half' style='background-color: yellow;'>
+          <button class='search-artist'>Search Artists</button>
         </div>
         <div class='column half flow-oposite' style='background-color: green;'>
+            <button class='search-album'>Search Albums</button>
         </div>
       </div>
       <div class='row clearfix'>
         <div class='column' style='background-color: red;'>
+          <div class='result'></div>
         </div>
       </div>
     </div>
@@ -32,27 +39,27 @@
     <!-- album template -->
     <script type="text/template" id="album-template">
       <div class="album">
-        <div class="name"><%=nameAlbum%> 
+        <div class="name"><%=name%> 
         </div>
-        <div class="artistNam"><%=nameArtist%> 
+        <div class="artist"><%=artist%> 
         </div>
         <div class="url"><%=url%>
         </div>
-        <img src=<%=albumPic%>> </img>
+        <img class='pic' src=<%=imagemedium%>> </img>
       </div>
     </script>
 
     <!-- artist template -->
     <script type="text/template" id="artist-template">
       <div class="artist">
-        <div class="name"><%=nameArtist%> 
+        <div class="name"><%=name%> 
         </div>
         <div class="url"><%=url%>
         </div>
-        <img src=<%=artistPic%>> </img>
+
       </div>
     </script>
-    
+
     <!-- main script -->
     <script data-main="js/main.js" src="js/libs/require.js"></script>
   </body>

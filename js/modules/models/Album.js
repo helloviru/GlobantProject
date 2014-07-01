@@ -1,5 +1,5 @@
-define( function () {
-  var Album =  Backbone.Model.extend({
+define(['libs/backbone'],function () {
+  var Album =  Backbone.Model.extend ({
 
     defaults: {
       'name': '',
@@ -8,9 +8,10 @@ define( function () {
       'url': '',
       'imagesmall': '',
       'imagemedium': '',
-      'imagebig': '',
+      'imagebig': ''
     } 
 
-  };
+  });
+
   return Album;
 });

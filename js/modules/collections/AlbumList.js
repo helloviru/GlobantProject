@@ -1,6 +1,7 @@
-define( function () {
+define(['libs/backbone','models/Album'],function (Backbone,Album) {
+
   var AlbumCollection = Backbone.Collection.extend({
-  	model: Album;
+  	model: Album
   });
   return AlbumCollection;
 });

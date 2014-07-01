@@ -6,7 +6,7 @@ requirejs.config({
     api: './modules/api/api',
     models: './modules/models',
     views: './modules/views',
-    controllers: './modules/controllers'
+    collections: './modules/collections'
   },
   shim: {
     'libs/backbone': {
@@ -25,7 +25,7 @@ requirejs.config({
 // Guardar los modulos propios en js/modules
     // mimodulo = 'modules/mimodulo'
 
-requirejs(['api'], function(API) {
+requirejs(['api','views/AppView'], function(API,AppView) {
   lastfm = new API('909ddf89b315de9a146f114d7cffb8a6','http://ws.audioscrobbler.com/2.0/');
-
+  app = new AppView(API);
 });
