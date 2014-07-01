@@ -14,9 +14,45 @@
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all">
   </head>
   <body>
-    <script type="text/template" id="main-template">
 
+    <!-- central container with user information -->
+    <div class="container">
+      <div class='row clearfix'>
+        <div class='column half' style='background-color: yellow;'>
+        </div>
+        <div class='column half flow-oposite' style='background-color: green;'>
+        </div>
+      </div>
+      <div class='row clearfix'>
+        <div class='column' style='background-color: red;'>
+        </div>
+      </div>
+    </div>
+
+    <!-- album template -->
+    <script type="text/template" id="album-template">
+      <div class="album">
+        <div class="name"><%=nameAlbum%> 
+        </div>
+        <div class="artistNam"><%=nameArtist%> 
+        </div>
+        <div class="url"><%=url%>
+        </div>
+        <img src=<%=albumPic%>> </img>
+      </div>
     </script>
+
+    <!-- artist template -->
+    <script type="text/template" id="artist-template">
+      <div class="artist">
+        <div class="name"><%=nameArtist%> 
+        </div>
+        <div class="url"><%=url%>
+        </div>
+        <img src=<%=artistPic%>> </img>
+      </div>
+    </script>
+    
     <!-- main script -->
     <script data-main="js/main.js" src="js/libs/require.js"></script>
   </body>

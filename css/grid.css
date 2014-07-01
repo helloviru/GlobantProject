@@ -41,12 +41,8 @@
   float: right;
 }
 
-.column.third {
-  display: none;
-}
-
 /* --------------- CONTEINER */
-.container-central {
+.container {
   width: 420px;
   margin: auto;
   margin-top: 60px;
@@ -59,26 +55,12 @@
 
 /* --------------- SMALL WIDTH */
 @media (min-width: 710px) {
-  .container-central {
+  .container {
     width: 700px;
   }
   .column.half {
     width: 50%;
   }
-  .column.third {
-    width: 33.4%;
-    display: block;
-  }
-  .column.two-thirds {
-    width: 66.6%;
-  }
-
 }
 
-/* --------------- BACKGROUND */
-.loggin {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  /* Despues eliminar */
 }
