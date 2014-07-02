@@ -3,7 +3,8 @@ define(['libs/backbone'], function () {
     defaults: {
       'name': '',
       'mbid': '',
-      'url': ''
+      'url': '',
+      'image': ''
     }
 
   });

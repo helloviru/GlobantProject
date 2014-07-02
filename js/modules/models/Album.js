@@ -1,4 +1,4 @@
-define(['libs/backbone'],function () {
+define(['libs/backbone'],function (Backbone) {
   var Album =  Backbone.Model.extend ({
 
     defaults: {
@@ -6,9 +6,7 @@ define(['libs/backbone'],function () {
       'artist': '',
       'id': '',
       'url': '',
-      'imagesmall': '',
-      'imagemedium': '',
-      'imagebig': ''
+      'image': ''
     } 
 
   });

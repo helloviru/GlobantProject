@@ -1,4 +1,4 @@
-define( function () {
+define(['libs/backbone'], function (Backbone) {
   var AlbumView = Backbone.View.extend({
   	tagName: "li",
 
