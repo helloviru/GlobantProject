@@ -10,8 +10,7 @@
 /* --------------- ROW CLEARFIX */
 .row {
   width: 100%;
-  /* Despues eliminar */
-  background-color: blue;
+  margin-bottom: 10px;
 }
 
 .clearfix:before,
@@ -32,9 +31,6 @@
 .column {
   width: 100%;
   float: left;
-
-  /* Despues eliminar */
-  height: 60px;
 }
 
 .column.flow-oposite {
@@ -45,22 +41,31 @@
 .container {
   width: 420px;
   margin: auto;
-  margin-top: 60px;
-  padding: 5px;
-
-  /* Despues eliminar */
-  height: 200px;
-  background-color: red;
+  margin-top: 5px;
 }
 
 /* --------------- SMALL WIDTH */
-@media (min-width: 710px) {
+@media (min-width: 610px) {
   .container {
-    width: 700px;
+    width: 600px;
   }
   .column.half {
     width: 50%;
   }
+}
+
+.artist:after,
+.album:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.album, .artist {
+  margin: 5px;
+  padding: 5px;
 }
 
 }

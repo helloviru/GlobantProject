@@ -1,6 +1,5 @@
 define(['libs/backbone'], function (Backbone) {
   var AlbumView = Backbone.View.extend({
-  	tagName: "li",
 
     template: _.template($('#album-template').html()),
 
@@ -14,7 +13,6 @@ define(['libs/backbone'], function (Backbone) {
 
     render: function() {
       this.$el.html(this.template(this.model.toJSON()));
-      this.$el.addClass('album');
 
       /*this.parts = {
         albumname = this.$('.name'),

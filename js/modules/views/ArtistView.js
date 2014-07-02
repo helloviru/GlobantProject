@@ -1,7 +1,6 @@
 define(['libs/backbone'], function (Backbone) {
   
   var ArtistView = Backbone.View.extend({
-    tagName: "li",
 
     template: _.template($('#artist-template').html()),
 
@@ -14,7 +13,6 @@ define(['libs/backbone'], function (Backbone) {
 
     render: function() {
       this.$el.html(this.template(this.model.toJSON()));
-      this.$el.addClass('artist');
 
       return this;
     }

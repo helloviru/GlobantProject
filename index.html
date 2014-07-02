@@ -16,21 +16,27 @@
   <body>
     <!-- central container with user information -->
     <div class="container">
+      <div class='row clearfix logo-container'>
+        <div class='column'>
+          <img class='logo' src='./img/icon.png'></img>
+          <div></div>
+        </div>
+      </div>
       <div class='row clearfix'>
         <div class='column'>
           <input type='text' class='searcher'></input>
         </div>
       </div>
       <div class='row clearfix'>
-        <div class='column half' style='background-color: yellow;'>
+        <div class='column half'>
           <button class='search-artist'>Search Artists</button>
         </div>
-        <div class='column half flow-oposite' style='background-color: green;'>
+        <div class='column half flow-oposite'>
             <button class='search-album'>Search Albums</button>
         </div>
       </div>
       <div class='row clearfix'>
-        <div class='column' style='background-color: red;'>
+        <div class='column'>
           <div class='result'></div>
         </div>
       </div>
@@ -39,22 +45,20 @@
     <!-- album template -->
     <script type="text/template" id="album-template">
       <div class="album">
-        <div class="name"><%=name%> 
-        </div>
-        <div class="artist"><%=artist%> 
-        </div>
-        <a class="url" href=<%=url%>>Ir a lastfm.com</a>
         <img class='picture' src=<%=image%> ></img>
+        <a href=<%=url%>><img class="icon" src='./img/logo.png'></img></a>
+        <div class="info"> <h3><%=name%></h3> <h4><%=artist%></h4>
+        </div>
       </div>
     </script>
 
     <!-- artist template -->
     <script type="text/template" id="artist-template">
       <div class="artist">
-        <div class="name"><%=name%> 
-        </div>
-        <a class="url" href=<%=url%>>Ir a lastfm.com</a>
         <img class='picture' src=<%=image%> ></img>
+        <a target='new' href=<%=url%>><img class="icon" src='./img/logo.png'></img></a>
+        <div class="info"><h3><%=name%></h3>
+        </div>
       </div>
     </script>
 
