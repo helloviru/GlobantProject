@@ -13,7 +13,12 @@ define(['libs/backbone'],function (Backbone) {
 
     getTracks: function() {
       if (this.get('tracks').length == 0) {
-        lastfm.AlbumInfo(this.get('mbid'),this);
+        if (this.get('mbid') != '') {
+          lastfm.AlbumInfoId(this.get('mbid'),this);
+        }
+        else {
+          lastfm.AlbumInfoNA(this.get('name'),this.get('artist'),this);
+        }
       }
     },
 

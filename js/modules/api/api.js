@@ -32,8 +32,21 @@ define(function() {
       xhr.send();
   };
 
-  API.prototype.AlbumInfo = function(id, album) {
+  API.prototype.AlbumInfoId = function(id, album) {
     var url = this.baseURL + '?method=album.getinfo&mbid=' + id + '&api_key=' + this.APIkey + '&format=json';
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState == 4) {
+        album.putTracks(xhr.response);
+      }
+    }
+    xhr.open('GET',url,true);
+    xhr.send();
+    return xhr.response;
+  };
+
+  API.prototype.AlbumInfoNA = function(albumn,artist,album) {
+    var url = this.baseURL + '?method=album.getinfo&artist=' + artist + '&album=' + albumn + '&api_key=' + this.APIkey + '&format=json';
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
       if (xhr.readyState == 4) {
