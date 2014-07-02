@@ -28,11 +28,9 @@
         </div>
       </div>
       <div class='row clearfix'>
-        <div class='column half'>
+        <div class='column'>
           <button class='search-artist'>Search Artists</button>
-        </div>
-        <div class='column half flow-oposite'>
-            <button class='search-album'>Search Albums</button>
+          <button class='search-album'>Search Albums</button>
         </div>
       </div>
       <div class='row clearfix'>
@@ -45,9 +43,19 @@
     <!-- album template -->
     <script type="text/template" id="album-template">
       <div class="album">
-        <img class='picture' src=<%=image%> ></img>
-        <a href=<%=url%>><img class="icon" src='./img/logo.png'></img></a>
-        <div class="info"> <h3><%=name%></h3> <h4><%=artist%></h4>
+        <div class='data'>
+          <img class='picture' src=<%=image%> ></img>
+          <a target='new' href=<%=url%>><img class="icon" src='./img/logo.png'></img></a>
+          <div class="info"> <h3><%=name%></h3> <h4><%=artist%></h4></div>
+        </div>
+        <div class='tracks'>
+          <ol>
+            <% _.each( tracks, function( track ){ %>
+            <li>
+             <h4><%=track.name%><h4><h5> <%=track.duration%> segundos.<h5>
+            </li>
+            <% }); %>
+          </ol>
         </div>
       </div>
     </script>
@@ -59,6 +67,13 @@
         <a target='new' href=<%=url%>><img class="icon" src='./img/logo.png'></img></a>
         <div class="info"><h3><%=name%></h3>
         </div>
+      </div>
+    </script>
+
+    <!-- track template -->
+    <script type="text/template" id="track-template">
+     <div class="tracks">
+
       </div>
     </script>
 

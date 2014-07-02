@@ -4,26 +4,29 @@ define(['libs/backbone'], function (Backbone) {
     template: _.template($('#album-template').html()),
 
     events: {
+      'click .picture': 'showTracks',
     },
 
     initialize: function() {
-      //this.listenTo(this.model, 'change', this.render);
       this.render();
+      this.listenTo(this.model, 'change', this.render);
     },
 
     render: function() {
       this.$el.html(this.template(this.model.toJSON()));
-
-      /*this.parts = {
-        albumname = this.$('.name'),
-        title: this.$('.artist'),
-        year: this.$('.url'),
-        genres: this.$('.pic'),
-      }*/
-
       return this;
-    }
+    },
 
+
+    showTracks: function() {
+      this.model.getTracks();
+      if (this.$el.hasClass('expanded')) {
+        this.$el.removeClass('expanded');
+      }
+      else {
+        this.$el.addClass('expanded');
+      }
+    }
   });
 
   return AlbumView;

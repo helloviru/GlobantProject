@@ -7,26 +7,40 @@ define(function() {
   };
 
   // Public methods
-  API.prototype.ArtistSearch = function(name) {
+  API.prototype.ArtistSearch = function(name, appview) {
       var url = this.baseURL + '?method=artist.search&artist=' + name + '&api_key=' + this.APIkey + '&format=json';
       var xhr = new XMLHttpRequest();
-      xhr.open('GET',url,false);
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4) {
+          appview.updateArtist(xhr.response);
+        }
+      }
+      xhr.open('GET',url,true);
       xhr.send();
       return xhr.response;
   };
 
-  API.prototype.AlbumSearch = function(name) {
+  API.prototype.AlbumSearch = function(name, appview) {
       var url = this.baseURL + '?method=album.search&album=' + name + '&api_key=' + this.APIkey + '&format=json';
       var xhr = new XMLHttpRequest();
-      xhr.open('GET',url,false);
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4) {
+          appview.updateAlbum(xhr.response);
+        }
+      }
+      xhr.open('GET',url,true);
       xhr.send();
-      return xhr.response;
   };
 
-  API.prototype.AlbumInfo = function(id) {
+  API.prototype.AlbumInfo = function(id, album) {
     var url = this.baseURL + '?method=album.getinfo&mbid=' + id + '&api_key=' + this.APIkey + '&format=json';
     var xhr = new XMLHttpRequest();
-    xhr.open('GET',url,false);
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState == 4) {
+        album.putTracks(xhr.response);
+      }
+    }
+    xhr.open('GET',url,true);
     xhr.send();
     return xhr.response;
   };

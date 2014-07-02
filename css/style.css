@@ -1,30 +1,23 @@
+/* --------------- BODY */
 body {
   font-family: sans-serif;
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: bold;
   background-image: url('../img/background.png');
   background-repeat: repeat;
-
 }
 
+/* --------------- COLUMN */
 .column {
   text-align: center;
 } 
 
+/* --------------- SEARCHER */
 .searcher {
   font-size: 20px;
 }
 
-.result {
-  max-height: 400px;
-  overflow-y: scroll;
-}
-.album, .artist {
-  background:-webkit-linear-gradient(rgba(127,127,127,0.2) 0%, rgba(127,127,127,0.2) 100% );
-  background:-moz-linear-gradient(rgba(127,127,127,0.2),rgba(127,127,127,0.2) 100% );
-  border: solid 2px #9B2727;
-  text-align: left;
-}
-
+/* --------------- CONTAINER */
 .container {
   background:-webkit-linear-gradient(rgba(255,255,255,0.4) 0%, rgba(216,216,216,0.4)  100% );
   background:-moz-linear-gradient(rgba(255,255,255,0.4), rgba(216,216,216,0.4) 100% );
@@ -40,6 +33,67 @@ body {
   height: 200px;
 }
 
+/* --------------- BUTTONS */
+button {
+  background:-webkit-linear-gradient(rgba(255,255,255,0.7)0%, rgba(155,39,39,0.4) 100%);
+  background:-moz-linear-gradient(rgba(255,255,255,0.7)0%, rgba(155,39,39,0.4) 100%);
+  color: #9B2727;
+  border: solid 1px #9B2727;
+  text-align: center;
+  vertical-align: middle;
+  margin: auto;
+  padding: auto;
+  width: 100px;
+  height: 60px;
+}
+
+button:hover {
+  background:-webkit-linear-gradient(rgba(155,39,39,0.4) 0%, rgba(255,255,255,0.7) 100% );
+  background:-moz-linear-gradient(rgba(155,39,39,0.4),rgba(255,255,255,0.7) 100% );
+}
+
+.search-artist {
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
+}
+
+.search-album {
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+/* --------------- RESULTS */
+.result {
+  overflow-y: auto;
+}
+
+.album, .artist {
+  margin: 5px;
+  padding: 5px;
+  background:-webkit-linear-gradient(rgba(127,127,127,0.2) 0%, rgba(127,127,127,0.2) 100% );
+  background:-moz-linear-gradient(rgba(127,127,127,0.2),rgba(127,127,127,0.2) 100% );
+  border: solid 2px #9B2727;
+  text-align: left;
+}
+
+.artist:after,
+.album:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.data:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+
 .picture {
   float: left;
   width: 48px;
@@ -53,15 +107,30 @@ body {
 
 .icon {
   float: right;
-  height: 15px;
+  height: 20px;
 }
 
 h3,
-h4 {
+h4,
+h5 {
   margin-top: 3px;
   margin-bottom: 0px;
 }
 
-h4 {
+h4,
+h5 {
   color: gray;
+}
+
+ol {
+  display: none;
+}
+
+.expanded ol {
+  display: block;
+  float: left;
+}
+
+.expanded .picture {
+  width: 96px;
 }

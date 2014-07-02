@@ -54,18 +54,4 @@
   }
 }
 
-.artist:after,
-.album:after {
-  content: ".";
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden;
-}
-
-.album, .artist {
-  margin: 5px;
-  padding: 5px;
-}
-
 }

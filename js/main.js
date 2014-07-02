@@ -27,5 +27,8 @@ requirejs.config({
 
 requirejs(['api','views/AppView'], function(API,AppView) {
   lastfm = new API('909ddf89b315de9a146f114d7cffb8a6','http://ws.audioscrobbler.com/2.0/');
-  app = new AppView(API);
+  $( document ).ready( function() {
+    $(document).find('.result').css('max-height', ($(window).height() - 350));
+    app = new AppView();
+  });
 });
